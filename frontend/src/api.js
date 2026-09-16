@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+// Use Vercel's same-origin /api proxy in production.
+// VITE_API_URL can still override this for local/external backend deployments.
+const API_BASE = import.meta.env.VITE_API_URL || '/api'
 
 const api = axios.create({ baseURL: API_BASE })
 
